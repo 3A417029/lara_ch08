@@ -39,12 +39,11 @@ Route::group(['prefix'=>'student'],function(){
 
 Route::get('student/{student_no}', function ($student_no) {
     return "學號：".$student_no;
-});
+})->while({'student_no'=>'s[0-9]{10}'});
 
 Route::get('student/{student_no}/score', function ($student_no) {
     return "學號 ".$student_no." 的所有成績";
 });
-
 
 Route::get('student/{student_no}/score/{subject}', function ($student_no,$subject) {
     return "學號 ".$student_no."的".$subject."成績";
