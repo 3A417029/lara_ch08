@@ -42,6 +42,10 @@ Route::pattern('subject','(chinese|english|math)');
 
 Route::get('/','HomeController@index');
 
+Route::group(['namespace'=>'Cool'],function(){
+    Route::get('cool','TestController@index');
+}
+
 Route::group(['prefix'=>'student'],function(){
     Route::get('{student_no}',[
         'as'=>'student',
