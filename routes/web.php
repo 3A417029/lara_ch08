@@ -38,7 +38,7 @@ Route::group(['prefix'=>'student'],function(){
 */
 
 Route::get('/board','BoardController@getIndex');
-
+Route::get('/score', 'StudentController@getStudentScore');
 
 Route::pattern('student_no','s3[A-Z][0-9]{6}');
 Route::pattern('subject','(chinese|english|math)');
