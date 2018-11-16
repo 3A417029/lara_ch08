@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests;
 use View;
 use App\Student;
 
@@ -16,11 +17,12 @@ class StudentController extends Controller
             'subject'=>null
         ]);
         */
+        $student=Student::where('no',$student_no)->firstOrFail();
         return View::make('student',[
-            'student' => $student,
-            'user' => $student->user,
-            'score' => $student->score,
-            'subject' => null
+            'student'=>$student,
+            'user'=>$student->user,
+            'score'=>$student->score,
+            'subject'=>null
         ]);
     }
 
@@ -33,10 +35,10 @@ class StudentController extends Controller
         */
         $student=Student::where('no',$student_no)->firstOrFail();
         return View::make('student',[
-            'student' => $student,
-            'user' => $student->user,
-            'score' => $student->score,
-            'subject' => $subject
+            'student'=>$student,
+            'user'=>$student->user,
+            'score'=>$student->score,
+            'subject'=>$subject
         ]);
     }
     

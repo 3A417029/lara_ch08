@@ -51,15 +51,14 @@ Route::group(['namespace' => 'Cool'],function (){
 
 Route::group(['prefix'=>'student'],function(){
     Route::get('{student_no}',[
-        'as'=>'student',
-        'uses'=>'StudentController@getStudentData'
-    ]);    
+        'as' => 'student', 
+        'uses' => 'StudentController@getStudentData'
+    ]);  
     Route::get('{student}/score/{subject?}',[
         'as'=>'student.score',
         'uses'=>'StudentController@getStudentScore'
     ]);
 });
-
 
 //Route::get('student/{student_no}/score', function ($student_no) {
 //    return "學號 ".$student_no." 的所有成績";
